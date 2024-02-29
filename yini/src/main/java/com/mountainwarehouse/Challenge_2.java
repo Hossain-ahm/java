@@ -11,17 +11,20 @@ public class Challenge_2 {
      * method fails
      * 4 bugs have been identified within the code.
      * See if you can find them all!
-     * 
+     *
      * @param numbers A list of numbers.
      * @return Return the minimum value in the list.
      */
     public static int returnSmallestValueInArray(int[] numbers) {
-        int min = Integer.MIN_VALUE;
-        for (int i = 0; i > numbers.length; i++) {
-            if (min < numbers[i]) {
-                min = numbers[i];
+        if (numbers.length == 0){
+            return 0;
+        }
+        int min = numbers[0];
+        for (int number : numbers) {
+            if (min > number) {
+                min = number;
             }
         }
-        return 1;
+        return min;
     }
 }
