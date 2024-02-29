@@ -1,6 +1,7 @@
 package com.mountainwarehouse;
 
 import java.util.HashMap;
+import java.util.Map.Entry;
 
 public class Challenge_3 {
     /// <summary>
@@ -21,11 +22,25 @@ public class Challenge_3 {
         HashMap<String, Double> branchSales = new HashMap<String, Double>();
 
         // TODO: Add branch sales to Hash Map
+        for (SalesItem item : sales){
+            if (!branchSales.containsKey(item.Branch)){
+                branchSales.put(item.Branch, item.TotalSales);
+            }branchSales.put(item.Branch, branchSales.get(item.Branch) + item.TotalSales);
+        }
 
         // TODO: Sort/get entry with highest sales value
+        String bestBranch = "";
+        double max = 0;
+
+        for (Entry<String,Double> value: branchSales.entrySet()){
+            if (value.getValue() > max){
+                max = value.getValue();
+                bestBranch = value.getKey();
+            }
+        }
 
         // TODO: Return branch
 
-        return "";
+        return bestBranch;
     }
 }
