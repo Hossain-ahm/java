@@ -12,8 +12,8 @@ public final class App {
      * @param args The arguments of the program.
      */
     public static void main(String[] args) {
-        Challenge_1 test = new Challenge_1();
-        double num = test.Discount(100,1);
+        Challenge_4 test = new Challenge_4();
+        double num = test.StampDuty(125000);
         System.out.println(num);
     }
 }

@@ -12,7 +12,7 @@ public class Challenge_1 {
 	 * @return Return the price including tax.
 	 */
 	public static double Add_Tax(double nonTaxAmount, double taxRate) {
-        if (taxRate >= 1.0 || taxRate < 0){
+        if (taxRate > 1.0 || taxRate < 0){
             throw  new BufferOverflowException();
         }
 
